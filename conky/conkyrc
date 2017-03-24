@@ -1,0 +1,41 @@
+own_window  yes
+own_window_transparent no
+own_window_type dock
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+
+total_run_times 0
+
+#borders
+draw_borders no
+#border_margin 3
+
+#shades
+draw_shades no
+
+#position
+gap_x 0
+gap_y 0
+alignment top_left
+
+#behaviour
+update_interval 0.5
+
+#colour
+default_color  8f8f8f
+#default_shade_color 000000
+#own_window_colour 262729
+own_window_colour 222222
+
+#font
+use_xft yes
+xftfont lime:size=8
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+#to prevent window from moving
+use_spacer none
+maximum_width 1920
+
+TEXT
+${color 95FC7B}${time %F %T}${alignc}   ${color FFAA00}${exec uname -r }  ${color AAC1DE}root: ${fs_free /} home: ${fs_free /home} tmp: ${fs_free /tmp}  ${color C11B17}T: ${exec sensors | grep "id"  | awk '{print $4}' | sed -e 's/+//'}  ${color 7A9ECD}${wireless_essid wlp4s0} | ${addr wlp4s0} | ${exec timelimit -q -t 2 -T 5 curl -s icanhazip.mtb.wtf || echo "No WAN"}  ${execpi 1 ~/.conky/volume.sh}V: ${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}%  ${color 70E252}0: ${exec acpi | grep "Battery 0" | sed -e 's/Battery.*: //' | sed -e 's/ remaining//' | sed -e 's/ until charged//' | sed 's/Unknown/Idle/'} 1: ${exec acpi | grep "Battery 1" | sed -e 's/Battery.*: //' | sed -e 's/ remaining//' | sed -e 's/ until charged//' | sed 's/Unknown/Idle/'}  ${color 8D38C9}L: ${loadavg}  ${color FFFFFF}${exec [[ `xset -q | grep Caps | awk '{ print $4 }'` = 'on' ]] && echo 'CAPS ON'}
