@@ -5,6 +5,9 @@ PATH=/home/matthew/bin:$PATH
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 export PATH=/home/matthew/.cabal/bin/:$PATH
+
+export SSH_AGENT_PID=$(pgrep ssh-agent)
+export SSH_AUTH_SOCK=/run/user/1000/ssh-agent
 source ~/.profile
 
 # Set name of the theme to load.
@@ -120,9 +123,6 @@ compdef _files start
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=/home/matthew/.cargo/bin:$PATH
-
-export SSH_AGENT_PID=$(pgrep ssh-agent)
-export SSH_AUTH_SOCK=/run/user/1000/ssh-agent
 
 
 PATH="/home/matthew/perl5/bin${PATH:+:${PATH}}"; export PATH;
