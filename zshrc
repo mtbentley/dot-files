@@ -17,11 +17,11 @@ source ~/.profile
 ZSH_THEME="bureau"
 #ZSH_THEME="gentoo"
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-fi
+#if [ -f "${HOME}/.gpg-agent-info" ]; then
+#  . "${HOME}/.gpg-agent-info"
+#  export GPG_AGENT_INFO
+#  export SSH_AUTH_SOCK
+#fi
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
