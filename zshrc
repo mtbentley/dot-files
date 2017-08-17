@@ -1,10 +1,10 @@
-PATH=/home/matthew/bin:$PATH
+PATH=~/bin:$PATH
 
 [[ `tty | sed -e "s:/dev/::"` = "tty1" ]] && (startx && logout || logout)
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-export PATH=/home/matthew/.cabal/bin:$PATH
+export PATH=~/.cabal/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 source ~/.profile
@@ -70,7 +70,7 @@ alias wanip="curl -s icanhazip.mtb.wtf"
 alias wanip4="curl -s -4 icanhazip.mtb.wtf"
 alias wanip6="curl -s -6 icanhazip.mtb.wtf"
 alias resource="source ~/.zshrc"
-alias weechat="python2 /home/matthew/bin/pyrnotify.py 4321 0 & ssh -R 4321:localhost:4321 weechat@mail.mtbentley.us -p 2222 -t 'tmux a || tmux'"
+alias weechat="python2 ~/bin/pyrnotify.py 4321 0 & ssh -R 4321:localhost:4321 weechat@mail.mtbentley.us -p 2222 -t 'tmux a || tmux'"
 alias wee='weechat'
 alias reswap="sudo swapoff /dev/sdb1 && sudo swapon /dev/sdb1"
 alias um="udiskie-umount"
@@ -118,15 +118,15 @@ compdef _files start
 #envoy -t ssh-agent
 #source <(envoy -p)
 
-#source /home/matthew/.nix-profile/etc/profile.d/nix.sh
+#source ~/.nix-profile/etc/profile.d/nix.sh
 #export NIX_REMOTE=daemon
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=/home/matthew/.cargo/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
 
 
-PATH="/home/matthew/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/matthew/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/matthew/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/matthew/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/matthew/perl5"; export PERL_MM_OPT;
+PATH="~/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="~/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"~/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=~/perl5"; export PERL_MM_OPT;
