@@ -7,11 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 export PATH=/home/matthew/.cabal/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
-if [[ $(uname) != "Darwin" ]]; then
-    export SSH_AGENT_PID=$(pgrep ssh-agent)
-    export SSH_AUTH_SOCK=/run/user/1000/ssh-agent
-fi
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
