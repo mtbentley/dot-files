@@ -4,11 +4,12 @@ PATH=/home/matthew/bin:$PATH
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-export PATH=/home/matthew/.cabal/bin/:$PATH
+export PATH=/home/matthew/.cabal/bin:$PATH
 
-export SSH_AGENT_PID=$(pgrep ssh-agent)
-export SSH_AUTH_SOCK=/run/user/1000/ssh-agent
-source ~/.profile
+if [[ $(uname) != "Darwin" ]]; then
+    export SSH_AGENT_PID=$(pgrep ssh-agent)
+    export SSH_AUTH_SOCK=/run/user/1000/ssh-agent
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -99,6 +100,7 @@ alias srw="sr netctl-auto@wlp4s0.service; jf"
 alias vm="virt-manager"
 alias snowman="echo ☃"
 alias ox='echo ΘΧ'
+alias pipup="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 export GOPATH=$HOME/projects/go
 
@@ -130,3 +132,5 @@ PERL5LIB="/home/matthew/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5L
 PERL_LOCAL_LIB_ROOT="/home/matthew/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/matthew/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/matthew/perl5"; export PERL_MM_OPT;
+
+source ~/.profile
