@@ -5,6 +5,7 @@ PATH=/home/matthew/bin:$PATH
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 export PATH=/home/matthew/.cabal/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 if [[ $(uname) != "Darwin" ]]; then
     export SSH_AGENT_PID=$(pgrep ssh-agent)
