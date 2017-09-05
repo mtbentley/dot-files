@@ -125,7 +125,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=~/.cargo/bin:$PATH
 
 
-PATH="~/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="~/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="~/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"~/perl5\""; export PERL_MB_OPT;
