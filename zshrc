@@ -70,8 +70,6 @@ alias wanip="curl -s icanhazip.mtb.wtf"
 alias wanip4="curl -s -4 icanhazip.mtb.wtf"
 alias wanip6="curl -s -6 icanhazip.mtb.wtf"
 alias resource="source ~/.zshrc"
-alias weechat="python2 ~/bin/pyrnotify.py 4321 0 & ssh -R 4321:localhost:4321 weechat@mail.mtbentley.us -p 2222 -t 'tmux a || tmux'"
-alias wee='weechat'
 alias reswap="sudo swapoff /dev/sdb1 && sudo swapon /dev/sdb1"
 alias um="udiskie-umount"
 alias m="udiskie-mount"
@@ -81,9 +79,7 @@ alias y='yaourt'
 alias yu='yaoup'
 alias re='reset'
 alias s='sudo systemctl'
-alias n='nano'
 alias j='journalctl'
-alias t='torrent'
 alias p='prettyping'
 alias sr='sudo systemctl restart'
 alias sp='sudo systemctl stop'
@@ -91,7 +87,6 @@ alias st='sudo systemctl start'
 alias jf='j -f'
 alias wa='wanip'
 alias doc='docker'
-alias et="emacsclient -t"
 alias pt="sudo powertop"
 alias v="vim"
 alias srw="sr netctl-auto@wlp4s0.service; jf"
@@ -104,15 +99,11 @@ export GOPATH=$HOME/projects/go
 
 function c { cd $1; ls }
 
-function torrent { ssh -l $1 -t bugs.case.edu 'tmux a'; }
-function storrent { ssh -l $1 -t bugs.case.edu 'tmux'; }
-function start { scp $1 ${2}@bugs.case.edu:~/.torrent/ && rm $1; }
 function roulette { RANDOM=$(od -vAn -N4 -tu4 < /dev/urandom); [ $[ $RANDOM % $1 ] -eq 0 ]; }
 
 function tssh { while ! ssh $1; do sleep 1; done }
 
 #Completion stuff
-compdef _files start
 #source /usr/bin/tdm
 
 #envoy -t ssh-agent
@@ -122,7 +113,7 @@ compdef _files start
 #export NIX_REMOTE=daemon
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=~/.cargo/bin:$PATH
+export PATH=${HOME}/.cargo/bin:$PATH
 
 
 PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
