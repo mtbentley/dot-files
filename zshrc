@@ -101,7 +101,7 @@ function c { cd $1; ls }
 
 function roulette { RANDOM=$(od -vAn -N4 -tu4 < /dev/urandom); [ $[ $RANDOM % $1 ] -eq 0 ]; }
 
-function tssh { while ! ssh $1; do sleep 1; done }
+function tssh { while ! ssh $@; do sleep 1; done }
 
 #Completion stuff
 #source /usr/bin/tdm
